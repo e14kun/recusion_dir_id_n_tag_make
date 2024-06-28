@@ -20,6 +20,9 @@ def d_tree(directory="",directory_id=0,lvl=0,all_path="",parent_id=0,d_tag=[],so
         new_parent_id=directory_id
         old_d_tag=d_tag[:]
         for now_d in d_list:
+            # print(f"{all_path}/{now_d}")
+            if os.path.isfile(f"{all_path}/{now_d}"):
+                continue
             directory_id,parent_id,old_d_tag,sort_num = d_tree(now_d,directory_id=directory_id+1,lvl=lvl+1,all_path=all_path,parent_id=new_parent_id,d_tag=old_d_tag,sort_num=sort_num)
         if len(old_d_tag)>0:
             del old_d_tag[-1]
