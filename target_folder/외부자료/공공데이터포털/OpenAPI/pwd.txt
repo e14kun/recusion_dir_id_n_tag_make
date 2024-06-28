@@ -1,0 +1,1 @@
+target_folder/외부자료/공공데이터포털/OpenAPI
